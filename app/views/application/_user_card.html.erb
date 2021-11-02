@@ -1,0 +1,36 @@
+<div class="card" id="user-<%= user.id %>">
+  <div class="card-header d-flex justify-content-start flex-wrap">
+    <h3 class="mr-3"><%= user.name %></h3>
+    <div>
+      <% if(logged_in? && current_user.role == 'admin') %>
+        <%= link_to translate('edit'), edit_user_path(user), class: 'btn btn-outline-secondary mr-3' %>
+        <% if user.tips.count == 0 && user.comments.count == 0 %>
+          <%= link_to translate('delete'), user_path(user), class: 'btn btn-outline-danger mr-3', method: :delete, remote: true %>
+          <p class="text-muted">Administrator can delete this user.</p>
+        <% else %>
+          <p class="text-muted">To delete user, delete the user's tips first.</p>
+        <% end %>
+
+      <% elsif logged_in? && @user == current_user %>
+        <%= link_to translate('edit'), edit_user_path(user), class: 'btn btn-outline-secondary mr-3' %>
+
+      <% else %>
+        <p class="text-muted">You have NO authority to edit or delete</p>
+      <% end %>
+
+    </div>
+  </div>
+  <% if user.avatar_url.present? %>
+    <%= image_tag user.avatar_url, class: 'card-img-top', alt: "Avatar for #{user.name}" %>
+  <% else %>
+    <%= image_tag default_avatar(user), class: 'card-img-top', alt: "Avatar for #{user.name}" %>
+  <% end %>
+  <div class="card-body">
+    <% if user.tips.any? %>
+      <p>Most recent tip: <%= link_to user.tips.last.title, tip_path(user.tips.last) %></p>
+    <% end %>
+    <p>Has created <%= pluralize_tips user.tips %> and made <%= pluralize_comments user.comments %></p>
+    <p class="text-muted">Joined Pro Tips on <%= user.created_at.strftime("%d %b %Y at %H:%M") %></p>
+    <p class="text-muted">Has been a member of Pro Tips for <%= time_ago_in_words(user.created_at) %></p>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<% if(flash.any?) %>
+  <div class="message-container">
+    <% flash.each do |name, message| %>
+      <div class="message <%= name %>"><%= message %></div>
+  <% end %>
+  </div>
+<% end %>
+
+<h1><%= translate('allusers') %></h1>
+<div class="row mt-4">
+  <% @users.each do |user| %>
+    <div class="col-md-4">
+      <%= render partial: 'user_card', locals: { user: user } %>
+    </div>
+  <% end %>
+  <div class="col-12 text-center ">
+    <%= paginate @users %>
+  </div>
+</div>

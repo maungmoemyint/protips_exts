@@ -1,0 +1,21 @@
+<div class="col-md-6" id="tip-<%= tip.id %>">
+  <div class="card">
+    <h4 class="card-header"><%= tip.title %></h4>
+    <div class="card-body">
+      <p>Posted by <%= render partial: 'user_link', locals: { user: tip.user } %></p>
+      <p><%= pluralize_comments(tip.comments) %> on this tip.</p>
+
+      <% if(logged_in? && current_user.role == 'admin') %>
+        <%= link_to 'Edit tip', edit_tip_path(tip), class: 'btn btn-outline-secondary', role: 'button' %>
+        <%= link_to 'Delete', tip_path(tip), class: 'btn btn-outline-secondary', method: :delete, remote: true, role: 'button' %>
+        <%= link_to 'Show more', tip_path(tip), class: 'btn btn-outline-primary', role: 'button' %>
+      <% elsif logged_in? && tip.user == current_user %>
+        <%= link_to 'Edit tip', edit_tip_path(tip), class: 'btn btn-outline-secondary', role: 'button' %>
+        <%= link_to 'Delete', tip_path(tip), class: 'btn btn-outline-secondary', method: :delete, remote: true, role: 'button' %>
+        <%= link_to 'Show more', tip_path(tip), class: 'btn btn-outline-primary', role: 'button' %>
+      <% else %>
+        <%= link_to 'Show more', tip_path(tip), class: 'btn btn-outline-primary', role: 'button' %>
+      <% end %>
+    </div>
+  </div>
+</div>

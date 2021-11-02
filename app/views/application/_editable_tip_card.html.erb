@@ -1,0 +1,31 @@
+<div class="col-md-6" id="tip-<%= tip.id %>">
+  <div class="card">
+    <h4 class="card-header"><%= tip.title %></h4>
+    <div class="card-body">
+      <p><%= pluralize_comments tip.comments %> on this tip.</p>
+      <div class="row">
+        <div class="col-md-12">
+          <%= link_to 'Show more', tip_path(tip), class: 'btn btn-outline-primary btn-block', role: 'button' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-2">
+            <% if(logged_in? && current_user.role == 'admin') %>
+              <%= link_to 'Delete', tip_path(tip), class: 'btn btn-outline-danger btn-block', method: :delete, remote: true, role: 'button' %>
+            <% elsif logged_in? && tip.user == current_user %>
+              <%= link_to 'Delete', tip_path(tip), class: 'btn btn-outline-danger btn-block', method: :delete, remote: true, role: 'button' %>
+            <% end %>
+        </div>
+
+
+        <div class="col-md-6 mt-2">
+          <% if(logged_in? && current_user.role == 'admin') %>
+            <%= link_to 'Edit', edit_tip_path(tip), class: 'btn btn-primary btn-block', role: 'button' %>
+          <% elsif logged_in? && tip.user == current_user %>
+            <%= link_to 'Edit', edit_tip_path(tip), class: 'btn btn-primary btn-block', role: 'button' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
