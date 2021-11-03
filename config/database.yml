@@ -21,10 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  adaptor: postgresql
+  adapter: postgresql
   encoding: unicode
-  database: protips_exts
+  database: protipsexts
   pool: 5
-  username: protips_exts
+  username: protipsexts
   password: secret
-  
