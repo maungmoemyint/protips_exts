@@ -20797,3 +20797,439 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2021-11-03 09:44:37 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTip Load (0.5ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" ORDER BY "tips"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  Rendered application/_tip_card.html.erb (33.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  Rendered application/_tip_card.html.erb (2.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  Rendered application/_tip_card.html.erb (2.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 14]]
+  Rendered application/_tip_card.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (51.8ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (2.0ms)
+  Rendered application/_footer.html.erb (1.0ms)
+Completed 200 OK in 352ms (Views: 327.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2021-11-03 09:44:41 +0100
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.7ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (1.9ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en/sessions" for 127.0.0.1 at 2021-11-03 09:44:51 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Els1QnZ8NnkdGVOR2kxcfh08SQRg39jwYvLPZD0CbBeOVdnspUgy+qTCShzLdtNwsqt+gFcHfFra/Oz+hiBR8g==", "email"=>"admin@epfl.ch", "password"=>"[FILTERED]", "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@epfl.ch"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/en/account/tips
+Completed 302 Found in 204ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/en/account/tips" for 127.0.0.1 at 2021-11-03 09:44:51 +0100
+Processing by Account::TipsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering account/tips/index.html.erb within layouts/application
+  [1m[36mTip Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered account/tips/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_admin_user_header.html.erb (0.5ms)
+  Rendered application/_header.html.erb (2.9ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/en/users" for 127.0.0.1 at 2021-11-03 09:44:54 +0100
+Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered application/_user_card.html.erb (14.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered application/_user_card.html.erb (4.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered application/_user_card.html.erb (3.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 4], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 4]]
+  Rendered application/_user_card.html.erb (12.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered application/_user_card.html.erb (4.0ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 8], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered application/_user_card.html.erb (4.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (57.7ms)
+  Rendered application/_admin_user_header.html.erb (0.6ms)
+  Rendered application/_header.html.erb (2.2ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 95.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/en/users?page=2" for 127.0.0.1 at 2021-11-03 09:44:58 +0100
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2", "locale"=>"en"}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 17]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 17], ["LIMIT", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 17]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 17]]
+  Rendered application/_user_card.html.erb (4.9ms)
+  Rendered users/index.html.erb within layouts/application (14.0ms)
+  Rendered application/_admin_user_header.html.erb (0.6ms)
+  Rendered application/_header.html.erb (2.0ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/en/tips" for 127.0.0.1 at 2021-11-03 09:45:06 +0100
+Processing by TipsController#index as HTML
+  Parameters: {"locale"=>"en"}
+Search completed using .
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE ((title LIKE '%%') OR (body LIKE '%%')) LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE ((title LIKE '%%') OR (body LIKE '%%')) LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 0]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered application/_tip_card.html.erb (3.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 2]]
+  Rendered application/_tip_card.html.erb (2.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 3]]
+  Rendered application/_tip_card.html.erb (2.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 4]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 5]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 6]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 6]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 7]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 8]]
+  Rendered application/_tip_card.html.erb (2.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE ((title LIKE '%%') OR (body LIKE '%%'))[0m
+  Rendered tips/index.html.erb within layouts/application (33.2ms)
+  Rendered application/_admin_user_header.html.erb (0.6ms)
+  Rendered application/_header.html.erb (2.0ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/en/sessions/1" for 127.0.0.1 at 2021-11-03 09:45:11 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ucm6hyyOZmali3ml/1OgOebjooAvX6SQeV0MJ2fabCEWsf6T2zkDUiHmbJO0SGAUzLT7pS+4mjfRpbmm5EaPWw==", "locale"=>"en", "id"=>"1"}
+Redirected to http://localhost:3000/?locale=en
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2021-11-03 09:45:11 +0100
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTip Load (0.3ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" ORDER BY "tips"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  Rendered application/_tip_card.html.erb (4.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  Rendered application/_tip_card.html.erb (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  Rendered application/_tip_card.html.erb (2.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 14]]
+  Rendered application/_tip_card.html.erb (2.3ms)
+  Rendered home/index.html.erb within layouts/application (17.0ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (1.8ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2021-11-03 10:03:37 +0100
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTip Load (0.2ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" ORDER BY "tips"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  Rendered application/_tip_card.html.erb (19.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  Rendered application/_tip_card.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 14]]
+  Rendered application/_tip_card.html.erb (1.9ms)
+  Rendered home/index.html.erb within layouts/application (35.5ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (1.7ms)
+  Rendered application/_footer.html.erb (0.7ms)
+Completed 200 OK in 61ms (Views: 54.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/en/login" for 127.0.0.1 at 2021-11-03 10:03:40 +0100
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (2.3ms)
+  Rendered application/_footer.html.erb (0.7ms)
+Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en/sessions" for 127.0.0.1 at 2021-11-03 10:03:54 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jv1N+rIxYqZNfE7kCNwA7zwf57Fg5g+ImRZ+O/0dkTq686FUYQVmJfSnV2kZ5o/hk4jQNVc+qyIhGF2hRj+s3w==", "email"=>"new@epfl.ch", "password"=>"[FILTERED]", "commit"=>"Log in", "locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new@epfl.ch"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/en/account/tips
+Completed 302 Found in 208ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/en/account/tips" for 127.0.0.1 at 2021-11-03 10:03:54 +0100
+Processing by Account::TipsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering account/tips/index.html.erb within layouts/application
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."updated_at" DESC[0m  [["user_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_editable_tip_card.html.erb (2.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 14]]
+  Rendered application/_editable_tip_card.html.erb (0.8ms)
+  Rendered account/tips/index.html.erb within layouts/application (7.7ms)
+  Rendered application/_registered_user_header.html.erb (0.5ms)
+  Rendered application/_header.html.erb (2.9ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/en/account" for 127.0.0.1 at 2021-11-03 10:03:56 +0100
+Processing by AccountController#edit as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering account/edit.html.erb within layouts/application
+  Rendered account/edit.html.erb within layouts/application (5.7ms)
+  Rendered application/_registered_user_header.html.erb (0.6ms)
+  Rendered application/_header.html.erb (2.3ms)
+  Rendered application/_footer.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/en/users/5" for 127.0.0.1 at 2021-11-03 10:03:58 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nb0edQ1akGY5E7ad8vNix0o+7WAfwMG/ld+ZS7lZgzuyaSqMjbbq1O8qrRfj3rxYUcNqn/iReBf+g8mAKDlDPQ==", "user"=>{"email"=>"new@epfl.ch", "name"=>"Dr. Moe Myint"}, "commit"=>"Update", "locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "new@epfl.ch"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/en/users/5
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/en/users/5" for 127.0.0.1 at 2021-11-03 10:03:58 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mTip Load (0.2ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered application/_user_card.html.erb (7.3ms)
+  Rendered users/show.html.erb within layouts/application (8.6ms)
+  Rendered application/_registered_user_header.html.erb (0.5ms)
+  Rendered application/_header.html.erb (2.0ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/en/users/5/edit" for 127.0.0.1 at 2021-11-03 10:04:02 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered users/edit.html.erb within layouts/application (3.8ms)
+  Rendered application/_registered_user_header.html.erb (0.6ms)
+  Rendered application/_header.html.erb (2.1ms)
+  Rendered application/_footer.html.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/en/users/5" for 127.0.0.1 at 2021-11-03 10:04:14 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KU6HBo1JKNBlbjfRRIk3BYgTRvdvksdGa6lpdGIVTxQGmrP/DaVSYrNXLFtVpOmak+7BCIjDfu4A9Tm/83WPEg==", "user"=>{"email"=>"new@epfl.ch", "name"=>"Dr. Moe Myint", "password"=>"[FILTERED]"}, "commit"=>"Update", "locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "new@epfl.ch"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$12$0hkrTpCwtUAbeg4EhMUgYej2eOu05uukWXRVpidwxqI9uaUVNBIze"], ["updated_at", "2021-11-03 09:04:15.097851"], ["id", 5]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/en/users/5
+Completed 302 Found in 204ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/en/users/5" for 127.0.0.1 at 2021-11-03 10:04:15 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTip Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tips" WHERE "tips"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mTip Load (0.1ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Tip Load (0.0ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."user_id" = ? ORDER BY "tips"."id" DESC LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tips" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" INNER JOIN "tips" ON "comments"."tip_id" = "tips"."id" WHERE "tips"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered application/_user_card.html.erb (5.0ms)
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+  Rendered application/_registered_user_header.html.erb (0.5ms)
+  Rendered application/_header.html.erb (1.7ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/en/sessions/1" for 127.0.0.1 at 2021-11-03 10:04:18 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t60/UnDif5DktdhQpjsevEEW3lKCEGix5rCgJbtZkzPw1XtGh1UapGDYzWbtIN6Ra0GHd4L3VhZOSBWkOMVwSQ==", "locale"=>"en", "id"=>"1"}
+Redirected to http://localhost:3000/?locale=en
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2021-11-03 10:04:18 +0100
+Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTip Load (0.2ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" ORDER BY "tips"."updated_at" DESC LIMIT ?[0m  [["LIMIT", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 20]]
+  Rendered application/_tip_card.html.erb (4.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 19]]
+  Rendered application/_tip_card.html.erb (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 16]]
+  Rendered application/_tip_card.html.erb (2.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered application/_user_link.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."tip_id" = ?[0m  [["tip_id", 14]]
+  Rendered application/_tip_card.html.erb (2.4ms)
+  Rendered home/index.html.erb within layouts/application (18.3ms)
+  Rendered application/_anonymous_user_header.html.erb (0.4ms)
+  Rendered application/_header.html.erb (1.9ms)
+  Rendered application/_footer.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 1.0ms)
+
+
