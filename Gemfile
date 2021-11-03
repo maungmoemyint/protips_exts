@@ -65,3 +65,4 @@ gem 'kaminari'
 gem 'carrierwave', '~> 1.1.0'
 
 gem 'figaro'
+gem 'fog-aws'
