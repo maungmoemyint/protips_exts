@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adaptor: postgresql
+  encoding: unicode
+  database: protips_exts
+  pool: 5
+  username: protips_exts
+  password: secret
+  
