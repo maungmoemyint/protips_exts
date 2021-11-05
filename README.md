@@ -6,6 +6,17 @@ The application is a tips forum, called `Pro Tips`, that allows developers to re
 
 When you've completed the project, update this README to include the full public Heroku URL that your deployed application can be accessed at.  Enter the URL in the "Deployed URL" section below.  The URL will have the format https://random-subdomain-11223.herokuapp.com.
 
+## Moe's Note
+
+AWS S3 is successfully deployed to store the Avatar on the AWS storage.
+
+All tasks have accomplished except one to create the comment using Javaform via AJAX. I am confused to create the java form.
+
+Need help to submit to the git link provided by the extension school.
+
+Successfully deployed to Heroku.
+
 ## Deployed URL
 
-Public Heroku URL: <enter URL here>
+Public Heroku URL:https://sheltered-falls-74153.herokuapp.com/
+
