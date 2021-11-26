@@ -8,13 +8,10 @@ helper_method :current_user
     @user = current_user
   end
 
-
-
   def update
     current_user.update(user_params)
     redirect_to account_path
   end
-
 
   private
 
