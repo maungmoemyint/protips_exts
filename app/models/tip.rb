@@ -11,7 +11,7 @@ class Tip < ApplicationRecord
   scope :most_recent,          -> { order(updated_at: :desc).limit(4) }
   scope :title_contains,       ->(item) { where('title LIKE ?', "%#{item}%") }
   scope :body_contains,        ->(item) { where('body LIKE ?', "%#{item}%") }
-  scope :search,               ->(search_term) { title_contains(search_term).or(body_contains(search_term)) }
+  scope :search,               ->(search_term) { title_contains((search_term).upcase).or(body_contains((search_term).downcase)) }
 
   paginates_per 8
 
