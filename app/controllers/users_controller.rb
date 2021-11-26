@@ -49,9 +49,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:alert] = "User was successfully deleted"
-    # respond_to do |format|
-      # format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-    # end
   end
 
   private

@@ -7,8 +7,7 @@ class TipsController < ApplicationController
   before_action :authorize_to_edit_tip,  only: [:edit, :update, :destroy]
 
   def index
-    # @tips = Tip.where('title LIKE ?', "%#{params[:q]}%").or(
-    #   Tip.where('body LIKE ?', "%#{params[:q]}%"))
+
     @search_term = params[:q]
     logger.info("Search completed using #{@search_term}.")
     @tips = Tip.search(@search_term).page(params[:page])
@@ -28,7 +27,6 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
 
-    #The following two lines is added by Moe
     user = User.find(session[:user_id])
     @tip.user = user
 
@@ -46,10 +44,9 @@ class TipsController < ApplicationController
 
   def update
 
-    #The following two lines is added by Moe
     user = User.find(session[:user_id])
     @tip.user = user
-    
+
     respond_to do |format|
       if @tip.update(tip_params)
         # In this format call, the flash message is being passed directly to
