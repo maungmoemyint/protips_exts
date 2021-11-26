@@ -7,7 +7,7 @@ class TipsController < ApplicationController
   before_action :authorize_to_edit_tip,  only: [:edit, :update, :destroy]
 
   def index
-
+    
     @search_term = params[:q]
     logger.info("Search completed using #{@search_term}.")
     @tips = Tip.search(@search_term).page(params[:page])
