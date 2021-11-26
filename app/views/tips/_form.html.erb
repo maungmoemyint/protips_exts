@@ -21,7 +21,7 @@
   <fieldset class="form-group row">
     <%= form.label translate('userid'), for: 'tip_user_id', class: 'col-md-2 col-form-label' %>
     <div class="col-md-10">
-      <%= form.text_field :user_id, class: 'form-control', value:current_user.id %>
+      <%= form.text_field :user_id, class: 'form-control', value:current_user.id, :readonly => true %>
     </div>
   </fieldset>
 
