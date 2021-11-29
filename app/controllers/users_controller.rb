@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_authenticated, :current_user
+  before_action :authorize_to_edit_user
 
   def index
     @users = User.all.page(params[:page])
@@ -66,5 +68,9 @@ class UsersController < ApplicationController
 
     def edit_user_params
       params.require(:user).permit(:email, :name, :avatar, :password, :role)
+    end
+
+    def authorize_to_edit_user
+      redirect_to(account_path) unless(can_edit?(@user))
     end
 end
