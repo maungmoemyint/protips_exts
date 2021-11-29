@@ -7,53 +7,58 @@
       <%= render partial: 'model_errors', locals: { model: @user } %>
     <% end %>
 
-    <div class="form-group row">
-      <%= form.label :email, class: 'col-md-2 col-form-label' %>
-      <div class="col-md-10">
-        <%= form.email_field :email, class: 'form-control', placeholder: 'e.g. me@epfl.ch' %>
-      </div>
-    </div>
+    <% if(current_user == @user || current_user.role == 'admin') %>
 
-    <fieldset class="form-group row">
-      <%= form.label :name, class: 'col-md-2 col-form-label' %>
-      <div class="col-md-10">
-        <%= form.text_field :name, class: 'form-control' %>
-      </div>
-    </fieldset>
-
-    <% if current_user.role == 'registered' %>
-      <fieldset class="form-group row">
-        <%= form.label :password, class: 'col-md-2 col-form-label' %>
+      <div class="form-group row">
+        <%= form.label :email, class: 'col-md-2 col-form-label' %>
         <div class="col-md-10">
-          <%= form.password_field :password, class: 'form-control' %>
+          <%= form.email_field :email, class: 'form-control', placeholder: 'e.g. me@epfl.ch' %>
+        </div>
+      </div>
+
+      <fieldset class="form-group row">
+        <%= form.label :name, class: 'col-md-2 col-form-label' %>
+        <div class="col-md-10">
+          <%= form.text_field :name, class: 'form-control' %>
         </div>
       </fieldset>
-    <% end %>
 
-    <fieldset class="form-group row">
-      <%= form.label :avatar, class: 'col-md-2 col-form-label' %>
-      <div class="col-md-10">
-        <%= form.file_field :avatar, class: 'form-control' %>
-      </div>
-    </fieldset>
+      <% if current_user.role == 'registered' %>
+        <fieldset class="form-group row">
+          <%= form.label :password, class: 'col-md-2 col-form-label' %>
+          <div class="col-md-10">
+            <%= form.password_field :password, class: 'form-control' %>
+          </div>
+        </fieldset>
+      <% end %>
 
-    <% if current_user.role == 'admin' %>
       <fieldset class="form-group row">
-        <%= form.label :role, class: 'col-md-2 col-form-label' %>
+        <%= form.label :avatar, class: 'col-md-2 col-form-label' %>
         <div class="col-md-10">
-          <%= form.select :role, %w(registered admin), {}, class: 'form-control' %>
+          <%= form.file_field :avatar, class: 'form-control' %>
         </div>
       </fieldset>
+
+      <% if current_user.role == 'admin' %>
+        <fieldset class="form-group row">
+          <%= form.label :role, class: 'col-md-2 col-form-label' %>
+          <div class="col-md-10">
+            <%= form.select :role, %w(registered admin), {}, class: 'form-control' %>
+          </div>
+        </fieldset>
+      <% end %>
+
+
+      <fieldset class="form-group row d-flex flex-row-reverse">
+        <div class="col-md-10">
+          <%= form.submit translate('update'), class: 'btn btn-primary btn-block mb-2' %>
+        </div>
+        <div class="col-md-2">
+          <%= link_to translate('cancel'), user_path(@user), class: 'btn btn-light btn-block' %>
+        </div>
+      </fieldset>
+    <% else %>
+        <p class="text-muted">You have NO authority to edit or update other users</p>
     <% end %>
-
-
-    <fieldset class="form-group row d-flex flex-row-reverse">
-      <div class="col-md-10">
-        <%= form.submit translate('update'), class: 'btn btn-primary btn-block mb-2' %>
-      </div>
-      <div class="col-md-2">
-        <%= link_to translate('cancel'), user_path(@user), class: 'btn btn-light btn-block' %>
-      </div>
-    </fieldset>
   <% end %>
 </div>

@@ -9,13 +9,16 @@
 <% end %>
 
 <h1><%= translate('allusers') %></h1>
-<div class="row mt-4">
-  <% @users.each do |user| %>
-    <div class="col-md-4">
-      <%= render partial: 'user_card', locals: { user: user } %>
+
+
+
+  <div class="row mt-4">
+    <% @users.each do |user| %>
+      <div class="col-md-4">
+        <%= render partial: 'user_card', locals: { user: user } %>
+      </div>
+    <% end %>
+    <div class="col-12 text-center ">
+      <%= paginate @users %>
     </div>
-  <% end %>
-  <div class="col-12 text-center ">
-    <%= paginate @users %>
   </div>
-</div>
